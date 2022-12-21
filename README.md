@@ -1,7 +1,3 @@
-See the [releases] to download just the code of all the code listings that appear in the book.
-
-[releases]: https://github.com/rust-lang/book/releases
-
 ## Requirements
 
 Building the book requires [mdBook], ideally the same version that
