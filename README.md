@@ -26,19 +26,6 @@ $ mdbook build
 The output will be in the `book` subdirectory. To check it out, open it in
 your web browser.
 
-_Firefox:_
-```bash
-$ firefox book/index.html                       # Linux
-$ open -a "Firefox" book/index.html             # OS X
-$ Start-Process "firefox.exe" .\book\index.html # Windows (PowerShell)
-$ start firefox.exe .\book\index.html           # Windows (Cmd)
-```
-
-To run the tests:
-
-```bash
-$ mdbook test
-```
 ## Spellchecking
 
 To scan source files for spelling errors, you can use the `spellcheck.sh`
