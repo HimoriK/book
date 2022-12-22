@@ -1,8 +1,7 @@
 ## Rust Utilities
 
-* Cargo, the included dependency manager and build tool, makes adding,
-  compiling, and managing dependencies painless and consistent across the Rust
-  ecosystem.
+* Cargo - dependency manager and build tool, adds,
+  compiles, and manages dependencies. 
 * The Rustfmt formatting tool ensures a consistent coding style across
   developers.
 * The Rust Language Server powers Integrated Development Environment (IDE)
