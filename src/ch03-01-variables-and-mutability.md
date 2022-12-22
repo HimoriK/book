@@ -37,7 +37,7 @@ easier to reason through and this helps to prevent bugs.
 
 But mutability can be very useful, and can make code more convenient to write.
 Variables are immutable by default, but can be made mutable by adding `mut` 
-in front of the variable name *see* [Chapter
+in front of the variable name like in [Chapter
 2][storing-values-with-variables]<!-- ignore -->. Adding `mut` also conveys
 intent to future readers of the code by indicating that other parts of the code
 will be changing this variable’s value.
