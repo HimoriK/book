@@ -1,7 +1,7 @@
 ## Changes
 
 The original documentation is filled with fluff, this is a shorthand edit
-I forked for personal use. 
+I created for personal use. 
 
 ## Requirements
 
