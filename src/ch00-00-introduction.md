@@ -20,11 +20,7 @@ far. Chapters 2, 12, and 20 are project chapters; the rest are concept chapters.
 Chapter 1 for Rust install, a “Hello, world!” program,
 and how to use Cargo. Chapter 2 is an intro guessing game program, experienced beginners start here. Chapter 3 covers Rust features
 similar to those of other programming languages, and in Chapter 4
-discusses Rust’s ownership system. If you’re a particularly meticulous
-learner who prefers to learn every detail before moving on to the next, you
-might want to skip Chapter 2 and go straight to Chapter 3, returning to Chapter
-2 when you’d like to work on a project applying the details you’ve learned.
-
+discusses Rust’s ownership system. 
 Chapter 5 discusses structs and methods, and Chapter 6 covers enums, `match`
 expressions, and the `if let` control flow construct.
 
@@ -38,8 +34,8 @@ functional programming languages. In Chapter 14, we’ll examine Cargo in more
 depth and talk about best practices for sharing your libraries with others.
 Chapter 15 discusses smart pointers.
 
-In Chapter 16, we’ll walk through different models of concurrent programming
-and talk about how Rust helps you to program in multiple threads.
+Chapter 16 explores different models for concurrent programming
+and how Rust allows to program in multiple threads.
 Chapter 17 compares Rust concepts with object-oriented programming
 principles.
 
