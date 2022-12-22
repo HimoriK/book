@@ -1,9 +1,4 @@
-## Who Rust Is For
-
-Rust is ideal for many people for a variety of reasons. Let’s look at a few of
-the most important groups.
-
-Rust brings contemporary developer tools to the systems programming world:
+## Included with Rust
 
 * Cargo, the included dependency manager and build tool, makes adding,
   compiling, and managing dependencies painless and consistent across the Rust
