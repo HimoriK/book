@@ -1,4 +1,4 @@
-## Included with Rust
+## Utilities
 
 * Cargo, the included dependency manager and build tool, makes adding,
   compiling, and managing dependencies painless and consistent across the Rust
@@ -68,10 +68,3 @@ tools, and Appendix E explains Rust editions.
 There is no wrong way to read this book: if you want to skip ahead, go for it!
 You might have to jump back to earlier chapters if you experience any
 confusion. But do whatever works for you.
-
-## Source Code
-
-The source files from which this book is generated can be found on
-[GitHub][book].
-
-[book]: https://github.com/rust-lang/book/tree/main/src
