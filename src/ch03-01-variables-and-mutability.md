@@ -36,8 +36,8 @@ won’t change, so you don’t have to keep track of it yourself. Your code is t
 easier to reason through and this helps to prevent bugs.
 
 But mutability can be very useful, and can make code more convenient to write.
-Although variables are immutable by default, you can make them mutable by
-adding `mut` in front of the variable name as you did in [Chapter
+Variables are immutable by default, but can be made mutable by adding `mut` 
+in front of the variable name [Chapter
 2][storing-values-with-variables]<!-- ignore -->. Adding `mut` also conveys
 intent to future readers of the code by indicating that other parts of the code
 will be changing this variable’s value.
@@ -112,10 +112,9 @@ As you saw in the guessing game tutorial in [Chapter
 2][comparing-the-guess-to-the-secret-number]<!-- ignore -->, you can declare a
 new variable with the same name as a previous variable. The second
 variable is what the compiler will see when you use the name of the variable.
-In effect, the second variable overshadows the first, taking any uses of the
-variable name to itself until either it repeats or the scope ends.
-We can shadow a variable by using the same variable’s name and repeating the
-use of the `let` keyword as follows:
+Overshadowing the first, taking any uses of the variable name to itself until 
+either it repeats or the scope ends. We can shadow a variable by using the 
+same variable’s name and repeating the use of the `let` keyword as follows:
 
 <span class="filename">Filename: src/main.rs</span>
 
