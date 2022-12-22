@@ -1,6 +1,6 @@
 # Common Programming Concepts
 
-In this chapter we’ll discuss concepts that appear in almost every programming language
+In this chapter we’ll discuss programming concepts that appear in almost every programming language
 and how they work in Rust. 
 
 Specifically, you’ll learn about variables, basic types, functions, comments,
