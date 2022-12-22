@@ -239,6 +239,4 @@ The main error message, `mismatched types`, reveals the core issue with this
 code. The definition of the function `plus_one` says that it will return an
 `i32`, but statements don’t evaluate to a value, which is expressed by `()`,
 the unit type. Therefore, nothing is returned, which contradicts the function
-definition and results in an error. In this output, Rust provides a message to
-possibly help rectify this issue: it suggests removing the semicolon, which
-would fix the error.
+definition and results in an error. 
