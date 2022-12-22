@@ -5,8 +5,6 @@ Variables”][storing-values-with-variables]<!-- ignore --> section, by default,
 variables are immutable. This is one of many nudges Rust gives you to write
 your code in a way that takes advantage of the safety and easy concurrency that
 Rust offers. However, you still have the option to make your variables mutable.
-Let’s explore how and why Rust encourages you to favor immutability and why
-sometimes you might want to opt out.
 
 When a variable is immutable, once a value is bound to a name, you can’t change
 that value. To illustrate this, generate a new project called *variables* in
@@ -36,16 +34,9 @@ not a good programmer! Experienced Rustaceans still get compiler errors.
 You received the error message `` cannot assign twice to immutable variable `x`
 `` because you tried to assign a second value to the immutable `x` variable.
 
-It’s important that we get compile-time errors when we attempt to change a
-value that’s designated as immutable because this very situation can lead to
-bugs. If one part of our code operates on the assumption that a value will
-never change and another part of our code changes that value, it’s possible
-that the first part of the code won’t do what it was designed to do. The cause
-of this kind of bug can be difficult to track down after the fact, especially
-when the second piece of code changes the value only *sometimes*. The Rust
-compiler guarantees that when you state that a value won’t change, it really
+The Rust compiler guarantees that when you state that a value won’t change, it really
 won’t change, so you don’t have to keep track of it yourself. Your code is thus
-easier to reason through.
+easier to reason through and this helps to prevent bugs.
 
 But mutability can be very useful, and can make code more convenient to write.
 Although variables are immutable by default, you can make them mutable by
@@ -82,8 +73,7 @@ First, you aren’t allowed to use `mut` with constants. Constants aren’t just
 immutable by default—they’re always immutable. You declare constants using the
 `const` keyword instead of the `let` keyword, and the type of the value *must*
 be annotated. We’ll cover types and type annotations in the next section,
-[“Data Types,”][data-types]<!-- ignore -->, so don’t worry about the details
-right now. Just know that you must always annotate the type.
+[“Data Types,”][data-types]<!-- ignore -->
 
 Constants can be declared in any scope, including the global scope, which makes
 them useful for values that many parts of code need to know about.
@@ -112,7 +102,7 @@ Constants are valid for the entire time a program runs, within the scope in
 which they were declared. This property makes constants useful for values in
 your application domain that multiple parts of the program might need to know
 about, such as the maximum number of points any player of a game is allowed to
-earn, or the speed of light.
+earn.
 
 Naming hardcoded values used throughout your program as constants is useful in
 conveying the meaning of that value to future maintainers of the code. It also
