@@ -1,9 +1,7 @@
 ## Functions
 
-Functions are prevalent in Rust code. You’ve already seen one of the most
-important functions in the language: the `main` function, which is the entry
-point of many programs. You’ve also seen the `fn` keyword, which allows you to
-declare new functions.
+You’ve already seen the `main` function as the start for most programs. There's 
+also the `fn` keyword, which declares new functions.
 
 Rust code uses *snake case* as the conventional style for function and variable
 names, in which all letters are lowercase and underscores separate words.
@@ -68,10 +66,7 @@ The declaration of `another_function` has one parameter named `x`. The type of
 in the format string.
 
 In function signatures, you *must* declare the type of each parameter. This is
-a deliberate decision in Rust’s design: requiring type annotations in function
-definitions means the compiler almost never needs you to use them elsewhere in
-the code to figure out what type you mean. The compiler is also able to give
-more helpful error messages if it knows what types the function expects.
+a deliberate decision in Rust’s design.
 
 When defining multiple parameters, separate the parameter declarations with
 commas, like this:
@@ -104,9 +99,8 @@ Function bodies are made up of a series of statements optionally ending in an
 expression. So far, the functions we’ve covered haven’t included an ending
 expression, but you have seen an expression as part of a statement. Because
 Rust is an expression-based language, this is an important distinction to
-understand. Other languages don’t have the same distinctions, so let’s look at
-what statements and expressions are and how their differences affect the bodies
-of functions.
+understand. Other languages don’t have the same distinctions, statements and 
+expressions are different in Rust.
 
 * **Statements** are instructions that perform some action and do not return
   a value.
@@ -176,8 +170,7 @@ as part of the `let` statement. Note that the `x + 1` line doesn’t have a
 semicolon at the end, which is unlike most of the lines you’ve seen so far.
 Expressions do not include ending semicolons. If you add a semicolon to the end
 of an expression, you turn it into a statement, and it will then not return a
-value. Keep this in mind as you explore function return values and expressions
-next.
+value.
 
 ### Functions with Return Values
 
