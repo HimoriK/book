@@ -11,7 +11,7 @@
 By using these and other tools in the Rust ecosystem, developers can be
 productive while writing systems-level code.
 
-## How to Use This Book
+## Reading Guide
 
 You’ll find two kinds of chapters in this book: concept chapters and project
 chapters. In concept chapters, you’ll learn about an aspect of Rust. In project
