@@ -26,8 +26,7 @@ regarding an immutability error, as shown in this output:
 
 This example shows how the compiler helps you find errors in your programs.
 Compiler errors can be frustrating, but really they only mean your program
-isn’t safely doing what you want it to do yet; they do *not* mean that you’re
-not a good programmer! Experienced Rustaceans still get compiler errors.
+isn’t safely running yet; errors are common.
 
 You received the error message `` cannot assign twice to immutable variable `x`
 `` because you tried to assign a second value to the immutable `x` variable.
