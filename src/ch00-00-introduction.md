@@ -1,6 +1,6 @@
 ## Rust Utilities
 
-* Cargo - dependency manager and build tool, adds,
+* Cargo, dependency manager and build tool, adds,
   compiles, and manages dependencies. 
 * The Rustfmt formatting tool ensures a consistent coding style across
   developers.
