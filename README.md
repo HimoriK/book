@@ -37,6 +37,5 @@ consistency).
 
 ## Contribution
 
-If you'd like to support this rewrite, simply remove any unnecessary details or rhetoric
-included in the documentation. If more than 3 words are used to explain something, remove
-or condense it. There is no reason for programming documentation to be filled with fluff.
+If you'd like to support this rewrite, remove any unnecessary details or rhetoric
+included in the documentation. No more than 3 words should explain something rhetorically. 
