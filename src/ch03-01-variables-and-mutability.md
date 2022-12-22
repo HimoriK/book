@@ -2,9 +2,7 @@
 
 As mentioned in the [“Storing Values with
 Variables”][storing-values-with-variables]<!-- ignore --> section, by default,
-variables are immutable. This is one of many nudges Rust gives you to write
-your code in a way that takes advantage of the safety and easy concurrency that
-Rust offers. However, you still have the option to make your variables mutable.
+variables are immutable.
 
 When a variable is immutable, once a value is bound to a name, you can’t change
 that value. To illustrate this, generate a new project called *variables* in
