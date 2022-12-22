@@ -40,11 +40,10 @@ and its message is printed.
 
 We can define functions to have *parameters*, which are special variables that
 are part of a function’s signature. When a function has parameters, you can
-provide it with concrete values for those parameters. Technically, the concrete
-values are called *arguments*, but in casual conversation, people tend to use
-the words *parameter* and *argument* interchangeably for either the variables
-in a function’s definition or the concrete values passed in when you call a
-function.
+provide it with concrete values for those parameters. Also called *arguments*, 
+the terms *parameter* and *argument* are used interchangeably for either the 
+variables in a function’s definition or the concrete values passed in when 
+you call a function.
 
 In this version of `another_function` we add a parameter:
 
