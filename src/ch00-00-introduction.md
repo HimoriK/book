@@ -1,4 +1,4 @@
-## Utilities
+## Rust Utilities
 
 * Cargo, the included dependency manager and build tool, makes adding,
   compiling, and managing dependencies painless and consistent across the Rust
