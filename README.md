@@ -1,3 +1,8 @@
+## Changes
+
+The original documentation is filled with fluff, this is a shorthand edit
+I forked for personal use. 
+
 ## Requirements
 
 Building the book requires [mdBook], ideally the same version that
@@ -50,3 +55,9 @@ which is provided in `ci/dictionary.txt`. If the script produces a false
 positive (say, you used word `BTreeMap` which the script considers invalid),
 you need to add this word to `ci/dictionary.txt` (keep the sorted order for
 consistency).
+
+## Contribution
+
+If you'd like to support this edit, simply remove any unnecessary details or rhetoric
+included in the documentation. If more than 3 words are used to explain something, remove
+or condense it. There is no reason for programming documentation to be filled with fluff.
