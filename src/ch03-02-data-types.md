@@ -1,7 +1,6 @@
 ## Data Types
 
-Every value in Rust is of a certain *data type*, which tells Rust what kind of
-data is being specified so it knows how to work with that data. We’ll look at
+Every value in Rust is of a certain *data type*, which work differently. We’ll look at
 two data type subsets: scalar and compound.
 
 Keep in mind that Rust is a *statically typed* language, which means that it
@@ -29,8 +28,7 @@ You’ll see different type annotations for other data types.
 ### Scalar Types
 
 A *scalar* type represents a single value. Rust has four primary scalar types:
-integers, floating-point numbers, Booleans, and characters. You may recognize
-these from other programming languages. Let’s jump into how they work in Rust.
+integers, floating-point numbers, Booleans, and characters.
 
 #### Integer Types
 
@@ -54,12 +52,10 @@ the type of an integer value.
 
 Each variant can be either signed or unsigned and has an explicit size.
 *Signed* and *unsigned* refer to whether it’s possible for the number to be
-negative—in other words, whether the number needs to have a sign with it
-(signed) or whether it will only ever be positive and can therefore be
-represented without a sign (unsigned). It’s like writing numbers on paper: when
-the sign matters, a number is shown with a plus sign or a minus sign; however,
-when it’s safe to assume the number is positive, it’s shown with no sign.
-Signed numbers are stored using [two’s complement][twos-complement]<!-- ignore
+negative(signed), or whether it will only ever be positive and can therefore be
+represented without a sign (unsigned). When it’s safe to assume the number 
+is positive, it’s shown with no sign. Signed numbers are stored using 
+[two’s complement][twos-complement]<!-- ignore
 --> representation.
 
 Each signed variant can store numbers from -(2<sup>n - 1</sup>) to 2<sup>n -
@@ -96,13 +92,11 @@ some sort of collection.
 
 > ##### Integer Overflow
 >
-> Let’s say you have a variable of type `u8` that can hold values between 0 and
+> You have a variable of type `u8` that can hold values between 0 and
 > 255. If you try to change the variable to a value outside that range, such as
 > 256, *integer overflow* will occur, which can result in one of two behaviors.
 > When you’re compiling in debug mode, Rust includes checks for integer overflow
-> that cause your program to *panic* at runtime if this behavior occurs. Rust
-> uses the term *panicking* when a program exits with an error; we’ll discuss
-> panics in more depth in the [“Unrecoverable Errors with
+> that cause your program to *panic* at runtime if this behavior occurs. See [“Unrecoverable Errors with
 > `panic!`”][unrecoverable-errors-with-panic]<!-- ignore --> section in Chapter
 > 9.
 >
@@ -127,11 +121,10 @@ some sort of collection.
 
 #### Floating-Point Types
 
-Rust also has two primitive types for *floating-point numbers*, which are
-numbers with decimal points. Rust’s floating-point types are `f32` and `f64`,
-which are 32 bits and 64 bits in size, respectively. The default type is `f64`
-because on modern CPUs, it’s roughly the same speed as `f32` but is capable of
-more precision. All floating-point types are signed.
+Rust also has two primitive types for *floating-point numbers*. Rust’s 
+floating-point types are `f32` and `f64`, which are 32 bits and 64 bits in size, respectively. 
+The default type is `f64` because on modern CPUs, it’s roughly the same speed as `f32` but is 
+capable of more precision. All floating-point types are signed.
 
 Here’s an example that shows floating-point numbers in action:
 
@@ -164,9 +157,8 @@ provides.
 
 #### The Boolean Type
 
-As in most other programming languages, a Boolean type in Rust has two possible
-values: `true` and `false`. Booleans are one byte in size. The Boolean type in
-Rust is specified using `bool`. For example:
+A Boolean type has two possible values: `true` and `false`. Booleans are one byte in size. 
+The Boolean type is specified using `bool`. For example:
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -197,7 +189,7 @@ and zero-width spaces are all valid `char` values in Rust. Unicode Scalar
 Values range from `U+0000` to `U+D7FF` and `U+E000` to `U+10FFFF` inclusive.
 However, a “character” isn’t really a concept in Unicode, so your human
 intuition for what a “character” is may not match up with what a `char` is in
-Rust. We’ll discuss this topic in detail in [“Storing UTF-8 Encoded Text with
+Rust. Discussed in [“Storing UTF-8 Encoded Text with
 Strings”][strings]<!-- ignore --> in Chapter 8.
 
 ### Compound Types
@@ -330,7 +322,7 @@ the value `2` from index `[1]` in the array.
 
 ##### Invalid Array Element Access
 
-Let’s see what happens if you try to access an element of an array that is past
+Try to access an element of an array that is past
 the end of the array. Say you run this code, similar to the guessing game in
 Chapter 2, to get an array index from the user:
 
@@ -367,10 +359,10 @@ run the code later.
 
 This is an example of Rust’s memory safety principles in action. In many
 low-level languages, this kind of check is not done, and when you provide an
-incorrect index, invalid memory can be accessed. Rust protects you against this
-kind of error by immediately exiting instead of allowing the memory access and
-continuing. Chapter 9 discusses more of Rust’s error handling and how you can
-write readable, safe code that neither panics nor allows invalid memory access.
+incorrect index, invalid memory can be accessed. Rust against this kind of error 
+by immediately exiting instead of allowing the memory access and continuing. 
+Chapter 9 discusses more of Rust’s error handling and how you can write readable, 
+safe code that neither panics nor allows invalid memory access.
 
 [comparing-the-guess-to-the-secret-number]:
 ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
