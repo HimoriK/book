@@ -264,7 +264,7 @@ brackets:
 ```
 
 Arrays are useful when you want your data allocated on the stack rather than
-the heap (we will discuss the stack and the heap more in [Chapter
+the heap (see [Chapter
 4][stack-and-heap]<!-- ignore -->) or when you want to ensure you always have a
 fixed number of elements. An array isn’t as flexible as the vector type,
 though. A *vector* is a similar collection type provided by the standard
@@ -316,7 +316,7 @@ like this:
 {{#rustdoc_include ../listings/ch03-common-programming-concepts/no-listing-14-array-indexing/src/main.rs}}
 ```
 
-In this example, the variable named `first` will get the value `1` because that
+In this example, the variable named `first` will get value `1` because that
 is the value at index `[0]` in the array. The variable named `second` will get
 the value `2` from index `[1]` in the array.
 
@@ -359,10 +359,10 @@ run the code later.
 
 This is an example of Rust’s memory safety principles in action. In many
 low-level languages, this kind of check is not done, and when you provide an
-incorrect index, invalid memory can be accessed. Rust against this kind of error 
-by immediately exiting instead of allowing the memory access and continuing. 
-Chapter 9 discusses more of Rust’s error handling and how you can write readable, 
-safe code that neither panics nor allows invalid memory access.
+incorrect index, invalid memory can be accessed. Rust protects against this
+kind of error by immediately exiting instead of allowing the memory access 
+and continuing. Chapter 9 discusses more of Rust’s error handling and how 
+to write readable, safe code that neither panics nor allows invalid memory access.
 
 [comparing-the-guess-to-the-secret-number]:
 ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
