@@ -5,9 +5,6 @@ Download Rust through `rustup`, a command line tool for managing Rust versions a
 > Note: If you prefer not to use `rustup` for some reason, please see the
 > [Other Rust Installation Methods page][otherinstall] for more options.
 
-Any newer, stable version of Rust you install using
-these steps should work with the content of this book.
-
 > ### Command Line Notation
 >
 > Throughout the book, some commands are used in the
