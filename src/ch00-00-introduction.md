@@ -12,8 +12,7 @@ productive while writing systems-level code.
 
 ## Reading Guide
 
-You’ll find two kinds of chapters in this book: concept chapters and project
-chapters. In concept chapters, you’ll learn about an aspect of Rust. In project
+In concept chapters, you’ll learn about an aspect of Rust. In project
 chapters, we’ll build small programs together, applying what you’ve learned so
 far. Chapters 2, 12, and 20 are project chapters; the rest are concept chapters.
 
