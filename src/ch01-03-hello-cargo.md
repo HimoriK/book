@@ -206,8 +206,7 @@ In this chapter, you’ve learned how to:
 * Write and run a “Hello, world!” program using `rustc` directly
 * Create and run a new project using the conventions of Cargo
 
-This is a great time to build a more substantial program to get used to reading
-and writing Rust code. So, in Chapter 2, we’ll build a guessing game program.
+In Chapter 2, we’ll build a guessing game program.
 
 [installation]: ch01-01-installation.html#installation
 [toml]: https://toml.io
