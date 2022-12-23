@@ -93,8 +93,7 @@ and we have a *Cargo.toml* configuration file in the top directory.
 Cargo expects your source files to live inside the *src* directory. The
 top-level project directory is just for README files, license information,
 configuration files, and anything else not related to your code. Using Cargo
-helps you organize your projects. There’s a place for everything, and
-everything is in its place.
+helps you organize your projects.
 
 If you started a project that doesn’t use Cargo, as we did with the “Hello,
 world!” project, you can convert it to a project that does use Cargo. Move the
