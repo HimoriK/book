@@ -1,15 +1,14 @@
 ## Control Flow
 
-The ability to run some code depending on whether a condition is `true` and to
-run some code repeatedly while a condition is `true` are basic building blocks
-in most programming languages. The most common constructs that let you control
+Checking whether a condition is `true` and then run some code repeatedly is consistent
+in most programming languages. Common constructs that let you control
 the flow of execution of Rust code are `if` expressions and loops.
 
 ### `if` Expressions
 
-An `if` expression allows you to branch your code depending on conditions. You
+An `if` expression allows code branching depending on conditions. You
 provide a condition and then state, “If this condition is met, run this block
-of code. If the condition is not met, do not run this block of code.”
+of code. If the condition is not met, do not run this block.”
 
 Create a new project called *branches* in your *projects* directory to explore
 the `if` expression. In the *src/main.rs* file, input the following:
@@ -218,8 +217,7 @@ class="keystroke">ctrl-c</span>. You may or may not see the word `again!`
 printed after the `^C`, depending on where the code was in the loop when it
 received the interrupt signal.
 
-Fortunately, Rust also provides a way to break out of a loop using code. You
-can place the `break` keyword within the loop to tell the program when to stop
+You can place the `break` keyword within the loop to tell the program when to stop
 executing the loop. Recall that we did this in the guessing game in the
 [“Quitting After a Correct Guess”][quitting-after-a-correct-guess]<!-- ignore
 --> section of Chapter 2 to exit the program when the user won the game by
