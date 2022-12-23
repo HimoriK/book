@@ -129,10 +129,9 @@ $ rustup self uninstall
 
 Rust also includes a local copy of it's original documentation 
 readable offline. Run `rustup doc` to open the local documentation
-in your browser.
-
-If you need to learn a type or function provided by the standard library, check 
-the application programming interface (API) documentation!
+in your browser. If you need to learn a type or function provided by 
+the standard library, check the application programming interface (API) 
+documentation!
 
 [otherinstall]: https://forge.rust-lang.org/infra/other-installation-methods.html
 [install]: https://www.rust-lang.org/tools/install
