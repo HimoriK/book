@@ -370,18 +370,16 @@ This code is a bit nicer, isn’t it?
 
 ## Summary
 
-You made it! This was a sizable chapter: you learned about variables, scalar
-and compound data types, functions, comments, `if` expressions, and loops! To
-practice with the concepts discussed in this chapter, try building programs to
-do the following:
+You learned about variables, scalar and compound data types, functions, comments, 
+`if` expressions, and loops! To practice with the concepts discussed in this chapter,
+try building programs todo the following:
 
 * Convert temperatures between Fahrenheit and Celsius.
 * Generate the *n*th Fibonacci number.
 * Print the lyrics to the Christmas carol “The Twelve Days of Christmas,”
   taking advantage of the repetition in the song.
 
-When you’re ready to move on, we’ll talk about a concept in Rust that *doesn’t*
-commonly exist in other programming languages: ownership.
+In chapter 4 we'll discuss ownership.
 
 [comparing-the-guess-to-the-secret-number]:
 ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
