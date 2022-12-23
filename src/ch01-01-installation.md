@@ -8,11 +8,7 @@ Download Rust through `rustup`, a command line tool for managing Rust versions a
 > ### Command Line Notation
 >
 > Throughout the book, some commands are used in the
-> terminal. Lines that you should enter in a terminal all start with `$`. You
-> don’t need to type the `$` character; it’s the command line prompt shown to
-> indicate the start of each command. Lines that don’t start with `$` typically
-> show the output of the previous command. Additionally, PowerShell-specific
-> examples will use `>` rather than `$`.
+> terminal. PowerShell-specific examples will use `>` rather than `$`.
 
 ### Installing `rustup` on Linux or macOS
 
@@ -122,8 +118,7 @@ Run `rustup doc` to open the local documentation
 in your browser. 
 
 If you need to learn a type or function provided by 
-the standard library, check the application programming interface (API) 
-documentation!
+the standard library, check the API documentation!
 
 [otherinstall]: https://forge.rust-lang.org/infra/other-installation-methods.html
 [install]: https://www.rust-lang.org/tools/install
