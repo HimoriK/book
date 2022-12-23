@@ -1,13 +1,12 @@
 ## Installation
 
 Download Rust through `rustup`, a command line tool for managing Rust versions and associated tools. 
-You’ll need internet for the download.
 
 > Note: If you prefer not to use `rustup` for some reason, please see the
 > [Other Rust Installation Methods page][otherinstall] for more options.
 
 Any newer, stable version of Rust you install using
-these steps should work as expected with the content of this book.
+these steps should work with the content of this book.
 
 > ### Command Line Notation
 >
@@ -52,21 +51,17 @@ the `build-essential` package.
 
 ### Installing `rustup` on Windows
 
-On Windows, go to [https://www.rust-lang.org/tools/install][install] and follow
-the instructions for installing Rust. At some point in the installation, you’ll
-receive a message explaining that you’ll also need the MSVC build tools for
-Visual Studio 2013 or later.
+On Windows, go to [https://www.rust-lang.org/tools/install][install] to install Rust. 
+At some point in the installation, you’ll receive a message explaining that you’ll also 
+need the MSVC build tools for Visual Studio 2013 or later.
 
 To acquire the build tools, you’ll need to install [Visual Studio
 2022][visualstudio]. When asked which workloads to install, include:
 
 * “Desktop Development with C++”
 * The Windows 10 or 11 SDK
-* The English language pack component, along with any other language pack of
-  your choosing
 
 The rest of this book uses commands that work in both *cmd.exe* and PowerShell.
-If there are specific differences, we’ll explain which to use.
 
 ### Troubleshooting
 
@@ -127,8 +122,7 @@ $ rustup self uninstall
 
 ### Local Documentation
 
-Rust also includes a local copy of it's original documentation 
-readable offline. Run `rustup doc` to open the local documentation
+Run `rustup doc` to open the local documentation
 in your browser. 
 
 If you need to learn a type or function provided by 
