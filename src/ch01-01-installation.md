@@ -127,7 +127,7 @@ $ rustup self uninstall
 
 ### Local Documentation
 
-Rust also includes a local copy of it's documentation 
+Rust also includes a local copy of it's original documentation 
 readable offline. Run `rustup doc` to open the local documentation
 in your browser.
 
