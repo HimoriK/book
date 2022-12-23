@@ -2,7 +2,7 @@
 
 Download Rust through `rustup`, a command line tool for managing Rust versions and associated tools. 
 
-> Note: If you prefer not to use `rustup` for some reason, please see the
+> Note: If you prefer not to use `rustup` for some reason, see 
 > [Other Rust Installation Methods page][otherinstall] for more options.
 
 > ### Command Line Notation
@@ -22,9 +22,8 @@ If you’re using Linux or macOS, open a terminal and enter the following comman
 $ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 ```
 
-The command downloads a script and starts the installation of the `rustup`
-tool, which installs the latest stable version of Rust. You might be prompted
-for your password. If the install is successful, the following line will appear:
+The command downloads a script and installs the `rustup`
+tool with the latest stable version of Rust. If the install is successful, the following line will appear:
 
 ```text
 Rust is installed now. Great!
