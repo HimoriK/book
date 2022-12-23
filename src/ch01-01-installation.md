@@ -127,8 +127,8 @@ $ rustup self uninstall
 
 ### Local Documentation
 
-The installation of Rust also includes a local copy of the documentation so
-that you can read it offline. Run `rustup doc` to open the local documentation
+Rust also includes a local copy of it's documentation 
+readable offline. Run `rustup doc` to open the local documentation
 in your browser.
 
 If you need to learn a type or function provided by the standard library, check 
