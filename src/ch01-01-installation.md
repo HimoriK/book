@@ -1,22 +1,17 @@
 ## Installation
 
-The first step is to install Rust. We’ll download Rust through `rustup`, a
-command line tool for managing Rust versions and associated tools. You’ll need
-an internet connection for the download.
+Download Rust through `rustup`, a command line tool for managing Rust versions and associated tools. 
+You’ll need internet for the download.
 
 > Note: If you prefer not to use `rustup` for some reason, please see the
 > [Other Rust Installation Methods page][otherinstall] for more options.
 
-The following steps install the latest stable version of the Rust compiler.
-Rust’s stability guarantees ensure that all the examples in the book that
-compile will continue to compile with newer Rust versions. The output might
-differ slightly between versions because Rust often improves error messages and
-warnings. In other words, any newer, stable version of Rust you install using
+Any newer, stable version of Rust you install using
 these steps should work as expected with the content of this book.
 
 > ### Command Line Notation
 >
-> In this chapter and throughout the book, we’ll show some commands used in the
+> Throughout the book, some commands are used in the
 > terminal. Lines that you should enter in a terminal all start with `$`. You
 > don’t need to type the `$` character; it’s the command line prompt shown to
 > indicate the start of each command. Lines that don’t start with `$` typically
@@ -111,8 +106,7 @@ In Linux and macOS, use:
 $ echo $PATH
 ```
 
-If that’s all correct and Rust still isn’t working, there are a number of
-places you can get help. Find out how to get in touch with other Rustaceans (a
+If Rust still isn’t working, ask for help from other Rustaceans (a
 silly nickname we call ourselves) on [the community page][community].
 
 ### Updating and Uninstalling
@@ -137,9 +131,8 @@ The installation of Rust also includes a local copy of the documentation so
 that you can read it offline. Run `rustup doc` to open the local documentation
 in your browser.
 
-Any time a type or function is provided by the standard library and you’re not
-sure what it does or how to use it, use the application programming interface
-(API) documentation to find out!
+If you need to learn a type or function provided by the standard library, check 
+the application programming interface (API) documentation!
 
 [otherinstall]: https://forge.rust-lang.org/infra/other-installation-methods.html
 [install]: https://www.rust-lang.org/tools/install
