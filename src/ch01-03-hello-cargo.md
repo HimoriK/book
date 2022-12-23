@@ -12,10 +12,6 @@ following in your terminal:
 $ cargo --version
 ```
 
-If you see a version number, you have it! If you see an error, such as `command
-not found`, look at the documentation for your method of installation to
-determine how to install Cargo separately.
-
 ### Creating a Project with Cargo
 
 Let’s create a new project using Cargo and look at how it differs from our
