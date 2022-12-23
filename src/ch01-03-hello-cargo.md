@@ -4,9 +4,8 @@ Cargo is Rust’s build system and package manager.
 
 Most Rust projects use Cargo, including within this book. 
 Cargo comes installed with Rust if you used the official installers discussed 
-in the [“Installation”][installation]<!-- ignore --> section. If you installed Rust
-through some other means, check whether Cargo is installed by entering the
-following in your terminal:
+in the [“Installation”][installation]<!-- ignore --> section. Check whether 
+Cargo is installed by entering the following in your terminal:
 
 ```console
 $ cargo --version
@@ -16,8 +15,7 @@ $ cargo --version
 
 Let’s create a new project using Cargo and look at how it differs from our
 original “Hello, world!” project. Navigate back to your *projects* directory
-(or wherever you decided to store your code). Then, on any operating system,
-run the following:
+Then, on any operating system, run the following:
 
 ```console
 $ cargo new hello_cargo
@@ -139,15 +137,10 @@ $ cargo run
 Hello, world!
 ```
 
-Using `cargo run` is more convenient than having to remember to run `cargo
-build` and then use the whole path to the binary, so most developers use `cargo
-run`.
+Using `cargo run` is more convenient.
 
-Notice that this time we didn’t see output indicating that Cargo was compiling
-`hello_cargo`. Cargo figured out that the files hadn’t changed, so it didn’t
-rebuild but just ran the binary. If you had modified your source code, Cargo
-would have rebuilt the project before running it, and you would have seen this
-output:
+If you had modified your source code, Cargo would have rebuilt the project 
+before running it, and you would have seen this output:
 
 ```console
 $ cargo run
@@ -157,8 +150,8 @@ $ cargo run
 Hello, world!
 ```
 
-Cargo also provides a command called `cargo check`. This command quickly checks
-your code to make sure it compiles but doesn’t produce an executable:
+Using `cargo check` quickly checks your code to make sure it compiles but 
+doesn’t produce an executable:
 
 ```console
 $ cargo check
@@ -183,19 +176,17 @@ Let’s recap what we’ve learned so far about Cargo:
 
 You can use `cargo build --release` to compile a project with optimizations. 
 This command will create an executable in *target/release* instead of *target/debug*. 
-The optimizations make your Rust code run faster, but turning them on lengthens 
-the time it takes for your program to compile. This is why there are two different 
-profiles: one for development, when you want to rebuild quickly and often, and 
-another for building the final program you’ll distribute that will run as fast 
-as possible. If you’re benchmarking your code’s running time, be sure to run 
-`cargo build --release` and benchmark with the executable in *target/release*.
+It will make the code run faster but increase compile time. This is why there are 
+two different profiles: one for development, and another for release. If you’re 
+benchmarking your code’s running time, be sure to run `cargo build --release` 
+and benchmark with the executable in *target/release*.
 
 ### Cargo as Convention
 
 Cargo is good for when programs grow to multiple files or need a dependency.
 
-In fact, to work on any existing projects, you can use the following commands 
-to check out the code using Git, change to that project’s directory, and build:
+On existing projects, you can check out the code using Git, change to that 
+project’s directory, and build:
 
 ```console
 $ git clone example.org/someproject
