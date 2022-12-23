@@ -43,4 +43,4 @@ covers Rust’s operators and symbols, Appendix C covers derivable traits
 provided by the standard library, Appendix D covers some useful development
 tools, and Appendix E explains Rust editions.
 
-If you want to skip ahead, go for it!
+Feel free to skip ahead!
