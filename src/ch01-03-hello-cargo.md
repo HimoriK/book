@@ -1,21 +1,10 @@
 ## Hello, Cargo!
 
-Cargo is Rust’s build system and package manager. Most Rustaceans use this tool
-to manage their Rust projects because Cargo handles a lot of tasks for you,
-such as building your code, downloading the libraries your code depends on, and
-building those libraries. (We call the libraries that your code needs
-*dependencies*.)
+Cargo is Rust’s build system and package manager.
 
-The simplest Rust programs, like the one we’ve written so far, don’t have any
-dependencies. If we had built the “Hello, world!” project with Cargo, it would
-only use the part of Cargo that handles building your code. As you write more
-complex Rust programs, you’ll add dependencies, and if you start a project
-using Cargo, adding dependencies will be much easier to do.
-
-Because the vast majority of Rust projects use Cargo, the rest of this book
-assumes that you’re using Cargo too. Cargo comes installed with Rust if you
-used the official installers discussed in the
-[“Installation”][installation]<!-- ignore --> section. If you installed Rust
+Most Rust projects use Cargo, including within this book. 
+Cargo comes installed with Rust if you used the official installers discussed 
+in the [“Installation”][installation]<!-- ignore --> section. If you installed Rust
 through some other means, check whether Cargo is installed by entering the
 following in your terminal:
 
@@ -183,13 +172,8 @@ $ cargo check
     Finished dev [unoptimized + debuginfo] target(s) in 0.32 secs
 ```
 
-Why would you not want an executable? Often, `cargo check` is much faster than
-`cargo build` because it skips the step of producing an executable. If you’re
-continually checking your work while writing the code, using `cargo check` will
-speed up the process of letting you know if your project is still compiling! As
-such, many Rustaceans run `cargo check` periodically as they write their
-program to make sure it compiles. Then they run `cargo build` when they’re
-ready to use the executable.
+Often, `cargo check` is much faster than `cargo build` because it skips 
+the step of producing an executable.
 
 Let’s recap what we’ve learned so far about Cargo:
 
@@ -200,10 +184,6 @@ Let’s recap what we’ve learned so far about Cargo:
   `cargo check`.
 * Instead of saving the result of the build in the same directory as our code,
   Cargo stores it in the *target/debug* directory.
-
-An additional advantage of using Cargo is that the commands are the same no
-matter which operating system you’re working on. So, at this point, we’ll no
-longer provide specific instructions for Linux and macOS versus Windows.
 
 ### Building for Release
 
@@ -220,8 +200,6 @@ the executable in *target/release*.
 
 ### Cargo as Convention
 
-With simple projects, Cargo doesn’t provide a lot of value over just using
-`rustc`, but it will prove its worth as your programs become more intricate.
 Once programs grow to multiple files or need a dependency, it’s much easier to
 let Cargo coordinate the build.
 
@@ -240,8 +218,7 @@ For more information about Cargo, check out [its documentation][cargo].
 
 ## Summary
 
-You’re already off to a great start on your Rust journey! In this chapter,
-you’ve learned how to:
+In this chapter, you’ve learned how to:
 
 * Install the latest stable version of Rust using `rustup`
 * Update to a newer Rust version
@@ -251,8 +228,6 @@ you’ve learned how to:
 
 This is a great time to build a more substantial program to get used to reading
 and writing Rust code. So, in Chapter 2, we’ll build a guessing game program.
-If you would rather start by learning how common programming concepts work in
-Rust, see Chapter 3 and then return to Chapter 2.
 
 [installation]: ch01-01-installation.html#installation
 [toml]: https://toml.io
