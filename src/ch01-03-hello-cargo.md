@@ -123,12 +123,11 @@ $ ./target/debug/hello_cargo # or .\target\debug\hello_cargo.exe on Windows
 Hello, world!
 ```
 
-If all goes well, `Hello, world!` should print to the terminal. Running `cargo
-build` for the first time also causes Cargo to create a new file at the top
-level: *Cargo.lock*. This file keeps track of the exact versions of
-dependencies in your project. This project doesn’t have dependencies, so the
-file is a bit sparse. You won’t ever need to change this file manually; Cargo
-manages its contents for you.
+Running `cargo build` for the first time also causes Cargo to create a 
+new file at the top level: *Cargo.lock*. This file keeps track of the exact 
+versions of dependencies in your project. This project doesn’t have dependencies, 
+so the file is a bit sparse. You won’t ever need to change this file manually; 
+Cargo manages its contents for you.
 
 We just built a project with `cargo build` and ran it with
 `./target/debug/hello_cargo`, but we can also use `cargo run` to compile the
@@ -189,20 +188,16 @@ executable in *target/release* instead of *target/debug*. The optimizations
 make your Rust code run faster, but turning them on lengthens the time it takes
 for your program to compile. This is why there are two different profiles: one
 for development, when you want to rebuild quickly and often, and another for
-building the final program you’ll give to a user that won’t be rebuilt
-repeatedly and that will run as fast as possible. If you’re benchmarking your
-code’s running time, be sure to run `cargo build --release` and benchmark with
-the executable in *target/release*.
+building the final program you’ll distribute that will run as fast as possible. 
+If you’re benchmarking your code’s running time, be sure to run `cargo build 
+--release` and benchmark with the executable in *target/release*.
 
 ### Cargo as Convention
 
-Once programs grow to multiple files or need a dependency, it’s much easier to
-let Cargo coordinate the build.
+Cargo is good for when programs grow to multiple files or need a dependency.
 
-Even though the `hello_cargo` project is simple, it now uses much of the real
-tooling you’ll use in the rest of your Rust career. In fact, to work on any
-existing projects, you can use the following commands to check out the code
-using Git, change to that project’s directory, and build:
+In fact, to work on any existing projects, you can use the following commands 
+to check out the code using Git, change to that project’s directory, and build:
 
 ```console
 $ git clone example.org/someproject
@@ -210,7 +205,7 @@ $ cd someproject
 $ cargo build
 ```
 
-For more information about Cargo, check out [its documentation][cargo].
+For more information about Cargo, see [its documentation][cargo].
 
 ## Summary
 
