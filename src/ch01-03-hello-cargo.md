@@ -176,10 +176,9 @@ Let’s recap what we’ve learned so far about Cargo:
 
 You can use `cargo build --release` to compile a project with optimizations. 
 This command will create an executable in *target/release* instead of *target/debug*. 
-It will make the code run faster but increase compile time. This is why there are 
-two different profiles: one for development, and another for release. If you’re 
-benchmarking your code’s running time, be sure to run `cargo build --release` 
-and benchmark with the executable in *target/release*.
+It will make the code run faster but increases compile time. This is why there are 
+development, and release profiles. If you’re benchmarking your code’s running time, 
+be sure to run `cargo build --release` and benchmark with the executable in *target/release*.
 
 ### Cargo as Convention
 
