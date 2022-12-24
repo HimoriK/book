@@ -57,12 +57,12 @@ When we run the program now, we get this:
 ```
 
 We’re allowed to change the value bound to `x` from `5` to `6` when `mut` is
-used. Ultimately, deciding whether to use mutability or not is up to you and
-depends on what you think is clearest in that particular situation.
+used. Ultimately, deciding whether to use mutability or not depends on what you 
+think is clearest in that particular situation.
 
 ### Constants
 
-Like immutable variables, *constants* are values that are bound to a name and
+Like immutable variables, *constants* are values bound to a name and
 are not allowed to change, but there are a few differences between constants
 and variables.
 
