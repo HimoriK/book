@@ -69,8 +69,7 @@ and variables.
 First, you aren’t allowed to use `mut` with constants. Constants aren’t just
 immutable by default—they’re always immutable. You declare constants using the
 `const` keyword instead of the `let` keyword, and the type of the value *must*
-be annotated. We’ll cover types and type annotations in the next section,
-[“Data Types,”][data-types]<!-- ignore -->
+be annotated. See, [“Data Types,”][data-types]<!-- ignore -->
 
 Constants can be declared in any scope, including the global scope, which makes
 them useful for values that many parts of code need to know about.
