@@ -108,12 +108,13 @@ hardcoded value needed to be updated in the future.
 ### Shadowing
 
 As you saw in the guessing game tutorial in [Chapter
-2][comparing-the-guess-to-the-secret-number]<!-- ignore -->, you can declare a
-new variable with the same name as a previous variable. The second
-variable is what the compiler will see when you use the name of the variable.
-Overshadowing the first, taking any uses of the variable name to itself until 
-either it repeats or the scope ends. We can shadow a variable by using the 
-same variable’s name and repeating the use of the `let` keyword as follows:
+2][comparing-the-guess-to-the-secret-number]<!-- ignore -->, you can 
+declare a new variable with the same name as a previous one. The second
+variable is what the compiler will see when you use it again. This 
+overshadows the first, taking any uses of the variable name to 
+itself until either it repeats or the scope ends. We can shadow a 
+variable by using the same variable’s name and repeating the use 
+of the `let` keyword as follows:
 
 <span class="filename">Filename: src/main.rs</span>
 
