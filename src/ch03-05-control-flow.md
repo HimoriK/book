@@ -1,6 +1,6 @@
 ## Control Flow
 
-Checking whether a condition is `true` and then run some code repeatedly is consistent
+Checking whether a condition is `true` and then run a code block repeatedly is consistent
 in most programming languages. Common constructs that let you control
 the flow of execution of Rust code are `if` expressions and loops.
 
@@ -21,18 +21,16 @@ the `if` expression. In the *src/main.rs* file, input the following:
 
 All `if` expressions start with the keyword `if`, followed by a condition. In
 this case, the condition checks whether or not the variable `number` has a
-value less than 5. We place the block of code to execute if the condition is
-`true` immediately after the condition inside curly brackets. Blocks of code
-associated with the conditions in `if` expressions are sometimes called *arms*,
-just like the arms in `match` expressions that we discussed in the [“Comparing
-the Guess to the Secret Number”][comparing-the-guess-to-the-secret-number]<!--
-ignore --> section of Chapter 2.
+value less than 5. The code block executes if the condition is `true` immediately 
+after the condition inside curly brackets. Blocks of code associated with the 
+conditions in `if` expressions are sometimes called *arms*, just like the arms in 
+`match` expressions that we discussed in the [“Comparing the Guess to the Secret Number”]
+[comparing-the-guess-to-the-secret-number]<!-- ignore --> section of Chapter 2.
 
-Optionally, we can also include an `else` expression, which we chose to do
-here, to give the program an alternative block of code to execute should the
-condition evaluate to `false`. If you don’t provide an `else` expression and
-the condition is `false`, the program will just skip the `if` block and move on
-to the next bit of code.
+If we include an `else` expression, it can give the program an 
+alternate block of code to execute if the condition evaluates to `false`. 
+If you don’t provide an `else` expression and the condition is `false`, the 
+program will skip the `if` block and move on to the next bit of code.
 
 Try running this code; you should see the following output:
 
@@ -274,11 +272,10 @@ doesn’t specify a label will exit the inner loop only. The `break
 A program will often need to evaluate a condition within a loop. While the
 condition is `true`, the loop runs. When the condition ceases to be `true`, the
 program calls `break`, stopping the loop. It’s possible to implement behavior
-like this using a combination of `loop`, `if`, `else`, and `break`; you could
-try that now in a program, if you’d like. However, this pattern is so common
-that Rust has a built-in language construct for it, called a `while` loop. In
-Listing 3-3, we use `while` to loop the program three times, counting down each
-time, and then, after the loop, print a message and exit.
+like this using a combination of `loop`, `if`, `else`, and `break`. However, 
+this pattern is so common that Rust has a built-in language construct for it, 
+called a `while` loop. In Listing 3-3, we use `while` to loop the program three 
+times, counting down each time, and after the loop, print a message then exit.
 
 <span class="filename">Filename: src/main.rs</span>
 
