@@ -25,13 +25,13 @@ regarding an immutability error, as shown in this output:
 ```
 
 This example shows how the compiler helps you find errors in your programs.
-Compiler errors can be frustrating, but really they only mean your program
-isn’t safely running yet; errors are common.
+Compiler errors only show that the program isn’t running safely yet; 
+errors are common.
 
 You received the error message `` cannot assign twice to immutable variable `x`
 `` because you tried to assign a second value to the immutable `x` variable.
 
-The Rust compiler guarantees that when you state that a value won’t change, it really
+The Rust compiler guarantees when you state that a value won’t change, it really
 won’t change, so you don’t have to keep track of it yourself. Your code is thus
 easier to reason through and this helps to prevent bugs.
 
