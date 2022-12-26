@@ -340,9 +340,9 @@ used in Listing 3-4.
 The safety and conciseness of `for` loops make them the most commonly used. 
 Even in situations in which you want to run some code a certain number of 
 times, as in the countdown example that used a `while` loop in Listing 
-3-3, a `for` loop is preferred. You can use a `Range`, provided by the 
-standard library, which generates all numbers in sequence starting from 
-one number and ending before another number.
+3-3, a `for` loop is preferred. You can use a `Range`, provided by 
+the standard library, which generates all numbers in sequence starting 
+from one number and ending before another number.
 
 Here’s what the countdown would look like using a `for` loop and another method
 we’ve not yet talked about, `rev`, to reverse the range:
