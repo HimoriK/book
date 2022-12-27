@@ -1,28 +1,21 @@
 ## What Is Ownership?
 
-Garbage collection regularly looks for no-longer-used memory as the program 
+Garbage collection regularly looks for free memory as the program 
 runs; in other languages, the programmer must explicitly allocate and free
-the memory. Rust uses a third approach: memory is managed through a
-system of ownership with a set of rules that the compiler checks. If
-any of the rules are violated, the program won’t compile. Ownership 
-won't slow down your program 
+the memory. Rust manages memory efficiently through a system of ownership 
+with a set of rules that the compiler checks. If any of the rules are violated, 
+the program won’t compile. 
 
-In this chapter, you’ll learn ownership by working through some examples that 
-focus on a very common data structure: strings.
+In this chapter, you’ll learn ownership by working with the 'strings' data type.
 
 > ### The Stack and the Heap
 >
-> In a systems programming language like Rust, whether a value is 
-> on the stack or the heap affects how the language behaves and why
-> you have to make certain decisions.
->
-> Both the stack and the heap are parts of memory available to your code to 
-> use at runtime, but they are structured in different ways. The stack stores
-> values in the order it gets them and removes the values in the opposite
-> order. *last in, first out*. Adding data is called *pushing onto the stack*, and 
-> removing data is called *popping off the stack*. All data stored on the stack 
-> must have a known, fixed size. Data with an unknown size at compile time or a 
-> size that might change must be stored on the heap instead.
+> The stack stores values in the order it gets them and removes the values in 
+> the opposite order. *last in, first out*. Adding data is called *pushing 
+> onto the stack*, and removing data is called *popping off the stack*. All 
+> data stored on the stack must have a known, fixed size. Data with an unknown 
+> size at compile time or a size that may change must be stored on the heap 
+> instead.
 >
 > The heap is less organized: when you put data on the heap, you request a
 > certain amount of space. The memory allocator finds an empty spot in the 
@@ -36,9 +29,7 @@ focus on a very common data structure: strings.
 > Pushing to the stack is faster than allocating on the heap because the
 > allocator never has to search for a place to store new data; that location is
 > always at the top of the stack. Comparatively, allocating space on the heap
-> requires more work because the allocator must first find a big enough space
-> to hold the data and then perform bookkeeping to prepare for the next
-> allocation.
+> requires more work because the allocator must first find a big enough space.
 >
 > Accessing data in the heap is slower than accessing data on the stack because
 > you have to follow a pointer to get there. Contemporary processors are faster
@@ -47,9 +38,9 @@ focus on a very common data structure: strings.
 > away (as it can be on the heap).
 >
 > When your code calls a function, the values passed into the function
-> (including, potentially, pointers to data on the heap) and the function’s
-> local variables get pushed onto the stack. When the function is over, those
-> values get popped off the stack.
+> (including pointers to the heap) and the it's local variables get 
+> pushed onto the stack. When the function is over, those values 
+> get popped off the stack.
 >
 > Ownership addresses problems with parts of code used on the heap, 
 > making it more efficient and organized.
@@ -65,8 +56,7 @@ work through the examples that illustrate them:
 
 ### Variable Scope
 
-As a first example of ownership, we’ll look at the *scope* of some variables. A
-scope is the range within a program for which an item is valid. Take the
+A scope is the range within a program for which an item is valid. Take the
 following variable:
 
 ```rust
@@ -94,11 +84,10 @@ In other words, there are two important points in time here:
 
 The types covered in [“Data Types”][data-types]<!-- ignore --> section 
 are of a known size, can be stored on the stack and popped off the stack 
-when their scope is over, and can be quickly and trivially copied to make 
-a new, independent instance if another part of code needs to use the same 
-value in a different scope. But we want to look at data that is stored on 
-the heap and explore how Rust knows when to clean up that data, and the 
-`String` type is a great example.
+when their scope is over, and can be copied to make a new, independent 
+instance if another part of code needs to use the same value in a different 
+scope. But we want to look at data that is stored on the heap and explore 
+how Rust knows when to clean up that data, and the `String` type is a great example.
 
 We’ll discuss `String` in more depth in [Chapter 8][ch8]<!-- ignore -->.
 
