@@ -4,8 +4,8 @@ Garbage collection regularly looks for no-longer-used memory as the program
 runs; in other languages, the programmer must explicitly allocate and free
 the memory. Rust uses a third approach: memory is managed through a
 system of ownership with a set of rules that the compiler checks. If
-any of the rules are violated, the program won’t compile. None of the features
-of ownership will slow down your program while it’s running.
+any of the rules are violated, the program won’t compile. Ownership 
+won't slow down your program 
 
 In this chapter, you’ll learn ownership by working through some examples that 
 focus on a very common data structure: strings.
@@ -16,17 +16,13 @@ focus on a very common data structure: strings.
 > on the stack or the heap affects how the language behaves and why
 > you have to make certain decisions.
 >
-> Both the stack and the heap are parts of memory available to your code to use
-> at runtime, but they are structured in different ways. The stack stores
+> Both the stack and the heap are parts of memory available to your code to 
+> use at runtime, but they are structured in different ways. The stack stores
 > values in the order it gets them and removes the values in the opposite
-> order. This is referred to as *last in, first out*. Think of a stack of
-> plates: when you add more plates, you put them on top of the pile, and when
-> you need a plate, you take one off the top. Adding or removing plates from
-> the middle or bottom wouldn’t work as well! Adding data is called *pushing
-> onto the stack*, and removing data is called *popping off the stack*. All
-> data stored on the stack must have a known, fixed size. Data with an unknown
-> size at compile time or a size that might change must be stored on the heap
-> instead.
+> order. *last in, first out*. Adding data is called *pushing onto the stack*, and 
+> removing data is called *popping off the stack*. All data stored on the stack 
+> must have a known, fixed size. Data with an unknown size at compile time or a 
+> size that might change must be stored on the heap instead.
 >
 > The heap is less organized: when you put data on the heap, you request a
 > certain amount of space. The memory allocator finds an empty spot in the 
@@ -55,10 +51,8 @@ focus on a very common data structure: strings.
 > local variables get pushed onto the stack. When the function is over, those
 > values get popped off the stack.
 >
-> Keeping track of what parts of code are using what data on the heap,
-> minimizing the amount of duplicate data on the heap, and cleaning up unused
-> data on the heap so you don’t run out of space are all problems that ownership
-> addresses.
+> Ownership addresses problems with parts of code used on the heap, 
+> making it more efficient and organized.
 
 ### Ownership Rules
 
@@ -70,12 +64,6 @@ work through the examples that illustrate them:
 * When the owner goes out of scope, the value will be dropped.
 
 ### Variable Scope
-
-Now that we’re past basic Rust syntax, we won’t include all the `fn main() {`
-code in examples, so if you’re following along, make sure to put the following
-examples inside a `main` function manually. As a result, our examples will be a
-bit more concise, letting us focus on the actual details rather than
-boilerplate code.
 
 As a first example of ownership, we’ll look at the *scope* of some variables. A
 scope is the range within a program for which an item is valid. Take the
@@ -102,35 +90,21 @@ In other words, there are two important points in time here:
 * When `s` comes *into* scope, it is valid.
 * It remains valid until it goes *out of* scope.
 
-At this point, the relationship between scopes and when variables are valid is
-similar to that in other programming languages. Now we’ll build on top of this
-understanding by introducing the `String` type.
-
 ### The `String` Type
 
-To illustrate the rules of ownership, we need a data type that is more complex
-than those we covered in the [“Data Types”][data-types]<!-- ignore --> section
-of Chapter 3. The types covered previously are of a known size, can be stored
-on the stack and popped off the stack when their scope is over, and can be
-quickly and trivially copied to make a new, independent instance if another
-part of code needs to use the same value in a different scope. But we want to
-look at data that is stored on the heap and explore how Rust knows when to
-clean up that data, and the `String` type is a great example.
+The types covered in [“Data Types”][data-types]<!-- ignore --> section 
+are of a known size, can be stored on the stack and popped off the stack 
+when their scope is over, and can be quickly and trivially copied to make 
+a new, independent instance if another part of code needs to use the same 
+value in a different scope. But we want to look at data that is stored on 
+the heap and explore how Rust knows when to clean up that data, and the 
+`String` type is a great example.
 
-We’ll concentrate on the parts of `String` that relate to ownership. These
-aspects also apply to other complex data types, whether they are provided by
-the standard library or created by you. We’ll discuss `String` in more depth in
-[Chapter 8][ch8]<!-- ignore -->.
+We’ll discuss `String` in more depth in [Chapter 8][ch8]<!-- ignore -->.
 
-We’ve already seen string literals, where a string value is hardcoded into our
-program. String literals are convenient, but they aren’t suitable for every
-situation in which we may want to use text. One reason is that they’re
-immutable. Another is that not every string value can be known when we write
-our code: for example, what if we want to take user input and store it? For
-these situations, Rust has a second string type, `String`. This type manages
-data allocated on the heap and as such is able to store an amount of text that
-is unknown to us at compile time. You can create a `String` from a string
-literal using the `from` function, like so:
+The `String` type manages data allocated on the heap and as such is able 
+to store an amount of text that is unknown to us at compile time. You can create a 
+`String` from a string literal using the `from` function, like so:
 
 ```rust
 let s = String::from("hello");
@@ -154,12 +128,11 @@ cannot? The difference is in how these two types deal with memory.
 
 ### Memory and Allocation
 
-In the case of a string literal, we know the contents at compile time, so the
-text is hardcoded directly into the final executable. This is why string
-literals are fast and efficient. But these properties only come from the string
-literal’s immutability. Unfortunately, we can’t put a blob of memory into the
-binary for each piece of text whose size is unknown at compile time and whose
-size might change while running the program.
+In a string literal, we know the contents at compile time, so the
+text is hardcoded directly into the final executable. String literals 
+are fast and efficient. But these properties only come from the string
+literal’s immutability. Memory cannot be allocated when unknown at 
+compile time or subject to change at runtime.
 
 With the `String` type, in order to support a mutable, growable piece of text,
 we need to allocate an amount of memory on the heap, unknown at compile time,
@@ -170,22 +143,17 @@ to hold the contents. This means:
   our `String`.
 
 That first part is done by us: when we call `String::from`, its implementation
-requests the memory it needs. This is pretty much universal in programming
-languages.
+requests the memory it needs.
 
 However, the second part is different. In languages with a *garbage collector
-(GC)*, the GC keeps track of and cleans up memory that isn’t being used
-anymore, and we don’t need to think about it. In most languages without a GC,
-it’s our responsibility to identify when memory is no longer being used and to
-call code to explicitly free it, just as we did to request it. Doing this
-correctly has historically been a difficult programming problem. If we forget,
-we’ll waste memory. If we do it too early, we’ll have an invalid variable. If
-we do it twice, that’s a bug too. We need to pair exactly one `allocate` with
-exactly one `free`.
+(GC)*, the GC keeps track of memory that isn’t being used anymore, and in most 
+languages without a GC, you have to identify when memory is no longer being used 
+and call code to explicitly free it. Doing this correctly is a difficult programming 
+problem. We need to pair each `allocate` with exactly one `free`.
 
-Rust takes a different path: the memory is automatically returned once the
-variable that owns it goes out of scope. Here’s a version of our scope example
-from Listing 4-1 using a `String` instead of a string literal:
+Rust automatically returns the memory once the variable that owns it goes out of 
+scope. Here’s a version of our scope example from Listing 4-1 using a `String` 
+instead of a string literal:
 
 ```rust
 {{#rustdoc_include ../listings/ch04-understanding-ownership/no-listing-02-string-scope/src/main.rs:here}}
@@ -206,7 +174,7 @@ curly bracket.
 This pattern has a profound impact on the way Rust code is written. It may seem
 simple right now, but the behavior of code can be unexpected in more
 complicated situations when we want to have multiple variables use the data
-we’ve allocated on the heap. Let’s explore some of those situations now.
+we’ve allocated on the heap.
 
 <!-- Old heading. Do not remove or links may break. -->
 <a id="ways-variables-and-data-interact-move"></a>
@@ -223,11 +191,10 @@ Let’s look at an example using an integer in Listing 4-2.
 <span class="caption">Listing 4-2: Assigning the integer value of variable `x`
 to `y`</span>
 
-We can probably guess what this is doing: “bind the value `5` to `x`; then make
+This might be what's happening: “bind the value `5` to `x`; then make
 a copy of the value in `x` and bind it to `y`.” We now have two variables, `x`
-and `y`, and both equal `5`. This is indeed what is happening, because integers
-are simple values with a known, fixed size, and these two `5` values are pushed
-onto the stack.
+and `y`, and both equal `5`. This is because integers are simple values with a 
+known, fixed size, and these two `5` values are pushed onto the stack.
 
 Now let’s look at the `String` version:
 
@@ -235,9 +202,8 @@ Now let’s look at the `String` version:
 {{#rustdoc_include ../listings/ch04-understanding-ownership/no-listing-03-string-move/src/main.rs:here}}
 ```
 
-This looks very similar, so we might assume that the way it works would be the
-same: that is, the second line would make a copy of the value in `s1` and bind
-it to `s2`. But this isn’t quite what happens.
+This looks similiar: that is, the second line would make a copy of the value in `s1` and bind
+it to `s2`. But this isn't the case.
 
 Take a look at Figure 4-1 to see what is happening to `String` under the
 covers. A `String` is made up of three parts, shown on the left: a pointer to
@@ -257,8 +223,7 @@ holding the value `"hello"` bound to `s1`</span>
 The length is how much memory, in bytes, the contents of the `String` are
 currently using. The capacity is the total amount of memory, in bytes, that the
 `String` has received from the allocator. The difference between length and
-capacity matters, but not in this context, so for now, it’s fine to ignore the
-capacity.
+capacity matters.
 
 When we assign `s1` to `s2`, the `String` data is copied, meaning we copy the
 pointer, the length, and the capacity that are on the stack. We do not copy the
@@ -284,8 +249,8 @@ src="img/trpl04-03.svg" class="center" style="width: 50%;" />
 <span class="caption">Figure 4-3: Another possibility for what `s2 = s1` might
 do if Rust copied the heap data as well</span>
 
-Earlier, we said that when a variable goes out of scope, Rust automatically
-calls the `drop` function and cleans up the heap memory for that variable. But
+When a variable goes out of scope, Rust automatically calls the 
+`drop` function and cleans up the heap memory for that variable. But
 Figure 4-2 shows both data pointers pointing to the same location. This is a
 problem: when `s2` and `s1` go out of scope, they will both try to free the
 same memory. This is known as a *double free* error and is one of the memory
@@ -337,11 +302,8 @@ copying can be assumed to be inexpensive in terms of runtime performance.
 #### Variables and Data Interacting with Clone
 
 If we *do* want to deeply copy the heap data of the `String`, not just the
-stack data, we can use a common method called `clone`. We’ll discuss method
-syntax in Chapter 5, but because methods are a common feature in many
-programming languages, you’ve probably seen them before.
-
-Here’s an example of the `clone` method in action:
+stack data, we can use a common method called `clone`. Here’s an example of 
+the `clone` method:
 
 ```rust
 {{#rustdoc_include ../listings/ch04-understanding-ownership/no-listing-05-clone/src/main.rs:here}}
@@ -350,14 +312,10 @@ Here’s an example of the `clone` method in action:
 This works just fine and explicitly produces the behavior shown in Figure 4-3,
 where the heap data *does* get copied.
 
-When you see a call to `clone`, you know that some arbitrary code is being
-executed and that code may be expensive. It’s a visual indicator that something
-different is going on.
-
 #### Stack-Only Data: Copy
 
-There’s another wrinkle we haven’t talked about yet. This code using
-integers—part of which was shown in Listing 4-2—works and is valid:
+This code using integers—part of which was shown in 
+Listing 4-2—works and is valid:
 
 ```rust
 {{#rustdoc_include ../listings/ch04-understanding-ownership/no-listing-06-copy/src/main.rs:here}}
@@ -386,11 +344,9 @@ we’ll get a compile-time error. To learn about how to add the `Copy` annotatio
 to your type to implement the trait, see [“Derivable
 Traits”][derivable-traits]<!-- ignore --> in Appendix C.
 
-So, what types implement the `Copy` trait? You can check the documentation for
-the given type to be sure, but as a general rule, any group of simple scalar
-values can implement `Copy`, and nothing that requires allocation or is some
-form of resource can implement `Copy`. Here are some of the types that
-implement `Copy`:
+As a general rule, any group of simple scalar values can implement `Copy`, 
+and nothing that requires allocation or is some form of resource can 
+implement it. Here are some of the types that implement `Copy`:
 
 * All the integer types, such as `u32`.
 * The Boolean type, `bool`, with values `true` and `false`.
@@ -441,12 +397,9 @@ heap goes out of scope, the value will be cleaned up by `drop` unless ownership
 of the data has been moved to another variable.
 
 While this works, taking ownership and then returning ownership with every
-function is a bit tedious. What if we want to let a function use a value but
-not take ownership? It’s quite annoying that anything we pass in also needs to
-be passed back if we want to use it again, in addition to any data resulting
-from the body of the function that we might want to return as well.
+function is a bit tedious.
 
-Rust does let us return multiple values using a tuple, as shown in Listing 4-5.
+Rust let's us return multiple values using a tuple, as shown in Listing 4-5.
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -457,7 +410,7 @@ Rust does let us return multiple values using a tuple, as shown in Listing 4-5.
 <span class="caption">Listing 4-5: Returning ownership of parameters</span>
 
 But this is too much ceremony and a lot of work for a concept that should be
-common. Luckily for us, Rust has a feature for using a value without
+common. Luckily, Rust has a feature for using a value without
 transferring ownership, called *references*.
 
 [data-types]: ch03-02-data-types.html#data-types
