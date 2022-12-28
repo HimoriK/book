@@ -47,9 +47,6 @@ In this chapter, you’ll learn ownership by working with the 'strings' data typ
 
 ### Ownership Rules
 
-First, let’s take a look at the ownership rules. Keep these rules in mind as we
-work through the examples that illustrate them:
-
 * Each value in Rust has an *owner*.
 * There can only be one owner at a time.
 * When the owner goes out of scope, the value will be dropped.
@@ -84,12 +81,11 @@ In other words, there are two important points in time here:
 
 The types covered in [“Data Types”][data-types]<!-- ignore --> section 
 are of a known size, can be stored on the stack and popped off the stack 
-when their scope is over, and can be copied to make a new, independent 
+when their scope ends, and can be copied to make a new, independent 
 instance if another part of code needs to use the same value in a different 
-scope. But we want to look at data that is stored on the heap and explore 
-how Rust knows when to clean up that data, and the `String` type is a great example.
+scope. The `String` type is a great example of GC.
 
-We’ll discuss `String` in more depth in [Chapter 8][ch8]<!-- ignore -->.
+We’ll examine `String` in [Chapter 8][ch8]<!-- ignore -->.
 
 The `String` type manages data allocated on the heap and as such is able 
 to store an amount of text that is unknown to us at compile time. You can create a 
