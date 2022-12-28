@@ -35,4 +35,4 @@ which is provided in `ci/dictionary.txt`.
 ## Contribution
 
 If you'd like to support this rewrite, remove any unnecessary details or rhetoric
-included in the documentation.
+in the documentation.
