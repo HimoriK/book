@@ -1,7 +1,7 @@
 ## Functions
 
 The `main` function is the start for most programs. There's 
-also the `fn` which declares new functions.
+also the `fn` to declare new functions.
 
 Here’s a program that contains an example function definition:
 
