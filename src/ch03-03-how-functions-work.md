@@ -1,10 +1,8 @@
 ## Functions
 
-You’ve already seen the `main` function as the start for most programs. There's 
-also the `fn` keyword, which declares new functions.
+The `main` function is the start for most programs. There's 
+also the `fn` which declares new functions.
 
-Rust code uses *snake case* as the conventional style for function and variable
-names, in which all letters are lowercase and underscores separate words.
 Here’s a program that contains an example function definition:
 
 <span class="filename">Filename: src/main.rs</span>
