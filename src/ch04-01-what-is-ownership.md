@@ -61,9 +61,9 @@ let s = "hello";
 ```
 
 The variable `s` refers to a string literal, where the value of the string is
-hardcoded into the text of our program. The variable is valid from the point at
-which it’s declared until the end of the current *scope*. Listing 4-1 shows a
-program with comments annotating where the variable `s` would be valid.
+hardcoded into the text of our program. The variable is valid from declaration
+until the end of the current *scope*. Listing 4-1 shows a program with comments 
+annotating where the variable `s` would be valid.
 
 ```rust
 {{#rustdoc_include ../listings/ch04-understanding-ownership/listing-04-01/src/main.rs:here}}
@@ -71,11 +71,6 @@ program with comments annotating where the variable `s` would be valid.
 
 <span class="caption">Listing 4-1: A variable and the scope in which it is
 valid</span>
-
-In other words, there are two important points in time here:
-
-* When `s` comes *into* scope, it is valid.
-* It remains valid until it goes *out of* scope.
 
 ### The `String` Type
 
@@ -87,8 +82,8 @@ scope. The `String` type is a great example of GC.
 
 We’ll examine `String` in [Chapter 8][ch8]<!-- ignore -->.
 
-The `String` type manages data allocated on the heap and as such is able 
-to store an amount of text that is unknown to us at compile time. You can create a 
+The `String` type manages data allocated on the heap and can store 
+an amount of text that is unknown to us at compile time. You can create a 
 `String` from a string literal using the `from` function, like so:
 
 ```rust
@@ -118,10 +113,6 @@ text is hardcoded directly into the final executable. String literals
 are fast and efficient. But these properties only come from the string
 literal’s immutability. Memory cannot be allocated when unknown at 
 compile time or subject to change at runtime.
-
-With the `String` type, in order to support a mutable, growable piece of text,
-we need to allocate an amount of memory on the heap, unknown at compile time,
-to hold the contents. This means:
 
 * The memory must be requested from the memory allocator at runtime.
 * We need a way of returning this memory to the allocator when we’re done with
@@ -274,10 +265,10 @@ access the heap data." src="img/trpl04-04.svg" class="center" style="width:
 <span class="caption">Figure 4-4: Representation in memory after `s1` has been
 invalidated</span>
 
-That solves our problem! With only `s2` valid, when it goes out of scope it
+With only `s2` valid, when it goes out of scope it
 alone will free the memory, and we’re done.
 
-In addition, there’s a design choice that’s implied by this: Rust will never
+Also, there’s a design choice implied by this: Rust will never
 automatically create “deep” copies of your data. Therefore, any *automatic*
 copying can be assumed to be inexpensive in terms of runtime performance.
 
@@ -394,8 +385,7 @@ Rust let's us return multiple values using a tuple, as shown in Listing 4-5.
 
 <span class="caption">Listing 4-5: Returning ownership of parameters</span>
 
-But this is too much ceremony and a lot of work for a concept that should be
-common. Luckily, Rust has a feature for using a value without
+Rust has a feature for using a value without
 transferring ownership, called *references*.
 
 [data-types]: ch03-02-data-types.html#data-types
