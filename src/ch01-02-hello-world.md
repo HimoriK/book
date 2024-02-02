@@ -181,4 +181,4 @@ Just compiling with `rustc` is fine for simple programs, but as your project
 grows, you’ll want to streamline sharing code. Next, we’ll introduce you to Cargo. 
 
 [troubleshooting]: ch01-01-installation.html#troubleshooting
-[devtools]: appendix-04-useful-development-tools.md
+[devtools]: appendix-04-useful-development-tools.html
