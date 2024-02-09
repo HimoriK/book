@@ -1,16 +1,14 @@
 ## The Slice Type
 
-*Slices* let you reference a contiguous sequence of elements in a collection
-rather than the whole collection. A slice is a kind of reference, so it does
+*Slices* reference a contiguous sequence of elements in a collection. A slice is a kind of reference, so does
 not have ownership.
 
-Here’s a small programming problem: write a function that takes a string of
-words separated by spaces and returns the first word it finds in that string.
+Write a function that takes a string of words split by spaces and returns the first word it finds in the string.
 If the function doesn’t find a space in the string, the whole string must be
-one word, so the entire string should be returned.
+one word, which will be returned.
 
-Let’s work through how we’d write the signature of this function without using
-slices, to understand the problem that slices will solve:
+Let’s try it without slices, to understand the problem that 
+using slices will solve:
 
 ```rust,ignore
 fn first_word(s: &String) -> ?
@@ -67,11 +65,10 @@ Otherwise, we return the length of the string by using `s.len()`.
 ```
 
 We now have a way to find out the index of the end of the first word in the
-string, but there’s a problem. We’re returning a `usize` on its own, but it’s
-only a meaningful number in the context of the `&String`. In other words,
-because it’s a separate value from the `String`, there’s no guarantee that it
-will still be valid in the future. Consider the program in Listing 4-8 that
-uses the `first_word` function from Listing 4-7.
+string. We’re returning a `usize` on its own, but it’s only a meaningful number 
+in the context of the `&String`. So, because it’s a separate value from the `String`, 
+there’s no guarantee that it will still be valid in the future. Consider the program 
+in Listing 4-8 that uses the `first_word` function from Listing 4-7.
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -197,15 +194,7 @@ Returning a slice would also work for a `second_word` function:
 fn second_word(s: &String) -> &str {
 ```
 
-We now have a straightforward API that’s much harder to mess up because the
-compiler will ensure the references into the `String` remain valid. Remember
-the bug in the program in Listing 4-8, when we got the index to the end of the
-first word but then cleared the string so our index was invalid? That code was
-logically incorrect but didn’t show any immediate errors. The problems would
-show up later if we kept trying to use the first word index with an emptied
-string. Slices make this bug impossible and let us know we have a problem with
-our code much sooner. Using the slice version of `first_word` will throw a
-compile-time error:
+Using the slice version of `first_word` will throw a compile-time error:
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -219,14 +208,12 @@ Here’s the compiler error:
 {{#include ../listings/ch04-understanding-ownership/no-listing-19-slice-error/output.txt}}
 ```
 
-Recall from the borrowing rules that if we have an immutable reference to
-something, we cannot also take a mutable reference. Because `clear` needs to
+If we have an immutable reference, we can't also take a mutable reference. Because `clear` needs to
 truncate the `String`, it needs to get a mutable reference. The `println!`
 after the call to `clear` uses the reference in `word`, so the immutable
 reference must still be active at that point. Rust disallows the mutable
 reference in `clear` and the immutable reference in `word` from existing at the
-same time, and compilation fails. Not only has Rust made our API easier to use,
-but it has also eliminated an entire class of errors at compile time!
+same time, and compilation fails.
 
 <!-- Old heading. Do not remove or links may break. -->
 <a id="string-literals-are-slices"></a>
@@ -300,8 +287,7 @@ assert_eq!(slice, &[2, 3]);
 ```
 
 This slice has the type `&[i32]`. It works the same way as string slices do, by
-storing a reference to the first element and a length. You’ll use this kind of
-slice for all sorts of other collections. We’ll discuss these collections in
+storing a reference to the first element and a length. We’ll discuss these collections in
 detail when we talk about vectors in Chapter 8.
 
 ## Summary
@@ -314,7 +300,7 @@ means you don’t have to write and debug extra code to get this control.
 
 Ownership affects how lots of other parts of Rust work, so we’ll talk about
 these concepts further throughout the rest of the book. Let’s move on to
-Chapter 5 and look at grouping pieces of data together in a `struct`.
+Chapter 5 and grouping pieces of data into a `struct`.
 
 [ch13]: ch13-02-iterators.html
 [ch6]: ch06-02-match.html#patterns-that-bind-to-values
