@@ -89,10 +89,6 @@ It’s often useful to create a new instance of a struct that includes most of
 the values from another instance, but changes some. You can do this using
 *struct update syntax*.
 
-First, in Listing 5-6 we show how to create a new `User` instance in `user2`
-regularly, without the update syntax. We set a new value for `email` but
-otherwise use the same values from `user1` that we created in Listing 5-2.
-
 <span class="filename">Filename: src/main.rs</span>
 
 ```rust
@@ -131,8 +127,7 @@ Move”][move]<!-- ignore --> section. In this example, we can no longer use
 `String` values for both `email` and `username`, and thus only used the
 `active` and `sign_in_count` values from `user1`, then `user1` would still be
 valid after creating `user2`. Both `active` and `sign_in_count` are types that
-implement the `Copy` trait, so the behavior we discussed in the [“Stack-Only
-Data: Copy”][copy]<!-- ignore --> section would apply.
+implement the `Copy` trait, see [“Stack-Only Data: Copy”][copy]<!-- ignore --> section
 
 ### Using Tuple Structs Without Named Fields to Create Different Types
 
@@ -157,9 +152,7 @@ instances of different tuple structs. Each struct you define is its own type,
 even though the fields within the struct might have the same types. For
 example, a function that takes a parameter of type `Color` cannot take a
 `Point` as an argument, even though both types are made up of three `i32`
-values. Otherwise, tuple struct instances are similar to tuples in that you can
-destructure them into their individual pieces, and you can use a `.` followed
-by the index to access an individual value.
+values.
 
 ### Unit-Like Structs Without Any Fields
 
@@ -180,12 +173,7 @@ named `AlwaysEqual`:
 To define `AlwaysEqual`, we use the `struct` keyword, the name we want, and
 then a semicolon. No need for curly brackets or parentheses! Then we can get an
 instance of `AlwaysEqual` in the `subject` variable in a similar way: using the
-name we defined, without any curly brackets or parentheses. Imagine that later
-we’ll implement behavior for this type such that every instance of
-`AlwaysEqual` is always equal to every instance of any other type, perhaps to
-have a known result for testing purposes. We wouldn’t need any data to
-implement that behavior! You’ll see in Chapter 10 how to define traits and
-implement them on any type, including unit-like structs.
+name we defined, without any curly brackets or parentheses. 
 
 > ### Ownership of Struct Data
 >
