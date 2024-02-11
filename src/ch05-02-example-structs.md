@@ -1,13 +1,11 @@
 ## An Example Program Using Structs
 
-To understand when we might want to use structs, let’s write a program that
-calculates the area of a rectangle. We’ll start by using single variables, and
+Here's a program that calculates the area of a rectangle. We’ll start by using single variables, and
 then refactor the program until we’re using structs instead.
 
 Let’s make a new binary project with Cargo called *rectangles* that will take
 the width and height of a rectangle specified in pixels and calculate the area
-of the rectangle. Listing 5-8 shows a short program with one way of doing
-exactly that in our project’s *src/main.rs*.
+of the rectangle. Listing 5-8 example.
 
 <span class="filename">Filename: src/main.rs</span>
 
@@ -36,10 +34,9 @@ The issue with this code is evident in the signature of `area`:
 
 The `area` function is supposed to calculate the area of one rectangle, but the
 function we wrote has two parameters, and it’s not clear anywhere in our
-program that the parameters are related. It would be more readable and more
-manageable to group width and height together. We’ve already discussed one way
-we might do that in [“The Tuple Type”][the-tuple-type]<!-- ignore --> section
-of Chapter 3: by using tuples.
+program that the parameters are related. It's better to group width and height together. See 
+[“The Tuple Type”][the-tuple-type]<!-- ignore --> section
+of Chapter 3: using tuples.
 
 ### Refactoring with Tuples
 
@@ -59,12 +56,10 @@ we’re now passing just one argument. But in another way, this version is less
 clear: tuples don’t name their elements, so we have to index into the parts of
 the tuple, making our calculation less obvious.
 
-Mixing up the width and height wouldn’t matter for the area calculation, but if
-we want to draw the rectangle on the screen, it would matter! We would have to
+Mixing up the width and height wouldn’t matter for the area calculation,
 keep in mind that `width` is the tuple index `0` and `height` is the tuple
-index `1`. This would be even harder for someone else to figure out and keep in
-mind if they were to use our code. Because we haven’t conveyed the meaning of
-our data in our code, it’s now easier to introduce errors.
+index `1`. Because we haven’t conveyed the meaning of our data in our code, 
+it’s now easier to introduce errors.
 
 ### Refactoring with Structs: Adding More Meaning
 
